@@ -2,7 +2,7 @@
     "name" : "fossology/fossology",
     "description" : "FOSSology is a open source license compliance software system and toolkit.",
     "_comment" : [
-        "Copyright Siemens AG 2014-2016",
+        "Copyright Siemens AG 2014-2021",
         "",
         "Copying and distribution of this file, with or without modification,",
         "are permitted in any medium without royalty provided the copyright",
@@ -27,7 +27,8 @@
         "twig/twig" : "v2.12.5",
         "twig/extensions" : "v1.5.4",
         "guzzlehttp/guzzle": "v6.5.5",
-        "container-interop/container-interop": "v1.2.0"
+        "container-interop/container-interop": "v1.2.0",
+        "twbs/bootstrap": "4.0.0"
     },
     "require-dev" : {
         "doctrine/instantiator" : "v1.0.5",
@@ -57,6 +58,12 @@
         "platform" : {
             "php" : "7.0.8"
         }
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "rm -rf www/ui/css/bootstrap",
+            "cp -R vendor/twbs/bootstrap www/ui/css/bootstrap"
+        ]
     },
     "homepage" : "https://www.fossology.org/",
     "license" : [

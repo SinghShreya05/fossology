@@ -38,16 +38,6 @@ table { border-spacing:0; }
 
 th { background:lightsteelblue; }
 
-a, a:visited, a:link
-{
-  text-decoration:none;
-  color:blue;
-}
-a:active, a:hover
-{
-  color:red;
-}
-
 div
 {
   padding:0;
@@ -242,13 +232,19 @@ img.deleted {
   margin-left: 3px;
   width: 11px;
 }
+
+.view-license-rc-size {
+  width:1.10rem;
+  height:1.10rem;
+}
+
 .nobreaktext {
   white-space: nowrap;
 }
 
 .browse-upload-checkbox {
-  vertical-align: bottom;
-  margin:0px;
+  vertical-align: middle;
+  margin:1px;
 }
 
 .ui-button-text .browse-upload-all-off {

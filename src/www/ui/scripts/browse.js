@@ -31,6 +31,7 @@ var staSel = null;
 $(document).ready(function () {
   table = createBrowseTable();
   $('#insert_browsetbl_filter').append($('#browsetbl_filter'));
+  $("input[type='search']").addClass("form-control-sm");
   initPrioClick();
   table.on('draw', function () {
     initPrioClick();
@@ -44,8 +45,8 @@ $(document).ready(function () {
       if(url){ window.location = url;}
     });
   });
-  commentModal = $('#commentModal').plainModal();
-  $(document).tooltip({'items':"img"});
+  commentModal = $('#commentModal').modal('hide');
+  //$(document).tooltip({'items':"img"});
 });
 
 function initPrioClick() {
@@ -105,12 +106,12 @@ function openCommentModal(upload, status, comment) {
   uploadId = upload;
   statusId = status;
   $("#commentText").val(comment);
-  commentModal.plainModal('open');
+  commentModal.modal('show');
 }
 
 function closeCommentModal() {
   $(staSel).val( $(staSel).find('option[selected]').val() );
-  commentModal.plainModal('close');
+  commentModal.modal('hide');
 }
 
 

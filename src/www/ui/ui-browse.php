@@ -181,12 +181,15 @@ class ui_browse extends FO_Plugin
     /* @var $uiFolderNav FolderNav */
     $uiFolderNav = $GLOBALS['container']->get('ui.folder.nav');
 
-    $folderNav = '<div id="sidetree">';
+    $folderNav = '<div id="sidetree" class="container justify-content-center" style="min-width: 234px;">';
     if ($folderId != $rootFolder->getId()) {
-      $folderNav .= '<div class="treeheader" style="display:inline;"><a href="' .
-          Traceback_uri() . '?mod=' . $this->Name . '">Top</a> | </div>';
+      $folderNav .= '<div class="treeheader" style="display:inline;"><a class="btn btn-outline-success btn-sm" href="' .
+          Traceback_uri() . '?mod=' . $this->Name . '">Top folder</a> | </div>';
     }
-    $folderNav .= '<div id="sidetreecontrol" class="treeheader" style="display:inline;"><a href="?#">Collapse All</a> | <a href="?#">Expand All</a></div><br/>';
+    $folderNav .= '<div id="sidetreecontrol" class="treeheader" style="display:inline;">
+                     <a class="btn btn-outline-success btn-sm" href="?#">Collapse All</a> |
+                     <a class="btn btn-outline-success btn-sm" href="?#">Expand All</a>
+                   </div><br/><br/>';
     $folderNav .= '<input type="text" style="width:95%;" id="searchFolderTree" placeholder="Search">';
     $folderNav .= $uiFolderNav->showFolderTree($folderId).'</div>';
 

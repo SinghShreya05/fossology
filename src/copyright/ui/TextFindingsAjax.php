@@ -321,7 +321,7 @@ class TextFindingsAjax
     $output['2'] = $this->getTableRowAction($hash, $upload, $type, $activated,
       $rw);
     if ($rw && $activated) {
-      $output['3'] = "<input type='checkbox' class='deleteBySelect$type' " .
+      $output['3'] = "<input type='checkbox' class='info-bullet view-license-rc-size deleteBySelect$type' " .
         "id='deleteBySelectfinding$hash' value='$hash,$upload," .
         $this->getDecisionTypeName($type) . "'>";
     } else {

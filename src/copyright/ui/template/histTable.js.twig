@@ -16,7 +16,7 @@ function createTableBase{{ table.type }}(activated) {
     var action = 'getData'
     aoColumns = aoColumns.concat([
       { "sTitle": "", "sClass": "center read_only", "sWidth": "10%", "bSortable": false },
-      { "sTitle": "<input type='checkbox' name='selectDelete{{ table.type }}' id='selectDelete{{ table.type }}' style='margin-left:11px'>", "sClass": "center read_only", "sWidth": "5%", "bSortable": false }
+      { "sTitle": "<input type='checkbox' class='info-bullet view-license-rc-size' name='selectDelete{{ table.type }}' id='selectDelete{{ table.type }}' style='margin-left:15px'>", "sClass": "center read_only", "sWidth": "5%", "bSortable": false }
     ]);
   }
   else
@@ -140,7 +140,7 @@ function createPlaneTableBase{{ table.type }}(activated) {
     var id = '#copyright{{ table.type }}';
     var action = 'getData'
     aoColumns = aoColumns.concat([
-      { "sTitle": "<input type='checkbox' name='selectDelete{{ table.type }}' id='selectDelete{{ table.type }}' style='margin-left:11px'>", "sClass": "center read_only", "sWidth": "5%", "bSortable": false }
+      { "sTitle": "<input type='checkbox' class='info-bullet view-license-rc-size' name='selectDelete{{ table.type }}' id='selectDelete{{ table.type }}' style='margin-left:15px'>", "sClass": "center read_only", "sWidth": "5%", "bSortable": false }
     ]);
   }
   else
@@ -237,7 +237,7 @@ function delete{{ table.type }}(upload, item, hash, kind) {
     data: { id : upload + ',' + item + ',' + hash + ',' + kind },
       success: function(data) {
         $("#delete{{ table.type }}" + hash).hide();
-        $("#update{{ table.type }}" + hash).show();
+        $("#update{{ table.type }}" + hash).attr("style","display:inline !important;");
       },
       error: function(errorResponse) {
         alert(errorResponse.responseText);
